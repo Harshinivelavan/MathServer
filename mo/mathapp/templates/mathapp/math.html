@@ -1,60 +1,22 @@
-# Ex.05 Design a Website for Server Side Processing
-## Date:05/05/2025
-
-## AIM:
- To design a website to calculate the power of a lamp filament in an incandescent bulb in the server side. 
-
-
-## FORMULA:
-P = I<sup>2</sup>R
-<br> P --> Power (in watts)
-<br> I --> Intensity
-<br> R --> Resistance
-
-## DESIGN STEPS:
-
-### Step 1:
-Clone the repository from GitHub.
-
-### Step 2:
-Create Django Admin project.
-
-### Step 3:
-Create a New App under the Django Admin project.
-
-### Step 4:
-Create python programs for views and urls to perform server side processing.
-
-### Step 5:
-Create a HTML file to implement form based input and output.
-
-### Step 6:
-Publish the website in the given URL.
-
-## PROGRAM :
-~~~
-
-math.html
-
 <html>
     <head>
         <title>Calculate Power of a lamp</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
-                background-color: #8566b0;
+                background-color: #40caa3;
                 margin: 0;
                 padding: 0;
             }
     
             h1 {
                 text-align: center;
-                color: #0a0909;
+                color: #392236;
                 margin-top: 40px;
             }
     
             form {
-                background-color: rgb(177, 104, 174);
+                background-color: rgb(109, 160, 242);
                 max-width: 400px;
                 margin: 30px auto;
                 padding: 30px;
@@ -77,7 +39,7 @@ math.html
             }
    
             button {
-                background-color: #d915a1;
+                background-color: #5b6d25;
                 color: white;
                 padding: 10px 20px;
                 border: none;
@@ -88,7 +50,7 @@ math.html
             }
     
             button:hover {
-                background-color: #d6131a;
+                background-color: #7b277a;
             }
     
             p {
@@ -112,43 +74,3 @@ math.html
     </form>
     </body>
 </html>
-
-views.py
-from django.shortcuts import render
-
-def power(request):
-    output = None  
-    if request.method == 'POST':
-      
-            intensity = int(request.POST.get('intensity-input'))
-            resistance = int(request.POST.get('resistance-input'))
-            output = (intensity ** 2) * resistance
-        
-    return render(request, 'mathapp/math.html', {'output': output})
-
-urls.py
-from django.contrib import admin
-from django.urls import path
-from mathapp import views
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',views.power,name='home'),
-
-]
-~~~
-
-
-
-## SERVER SIDE PROCESSING:
-
-![alt text](<Screenshot (118).png>)
-
-
-## HOMEPAGE:
-
-![alt text](<Screenshot (117).png>)
-
-
-## RESULT:
-The program for performing server side processing is completed successfully.
